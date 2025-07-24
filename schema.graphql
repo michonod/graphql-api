@@ -1,0 +1,40 @@
+type Query {
+  findAllBrands: [Brand!]!
+  findUniqueBrand(id: ID!): Brand
+  findUniqueModel(brandId: ID!, modelId: ID!): Model
+}
+
+type Brand {
+  id: ID!
+  name: String!
+  origin: String!
+  image: String
+  categories: [String!]!
+  models: [Model!]!
+}
+
+type Model {
+  id: ID!
+  name: String!
+  type: String!
+  image: String
+  description: String
+  specs: Specs!
+  musicians: [Musician!]!
+}
+
+type Specs {
+  bodyWood: String!
+  neckWood: String!
+  fingerboardWood: String!
+  pickups: String!
+  tuners: String!
+  scaleLength: String!
+  bridge: String!
+}
+
+type Musician {
+  name: String!
+  musicianImage: String
+  bands: [String!]!
+}
