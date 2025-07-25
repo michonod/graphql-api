@@ -9,9 +9,10 @@
     "build": "tsc"
   },
   "dependencies": {
+    "apollo-server-core": "^3.13.0",
     "apollo-server-micro": "^3.13.0",
-    "graphql": "^16.11.0",
-    "dotenv": "^17.2.0"
+    "dotenv": "^17.2.0",
+    "graphql": "^16.11.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.7",
