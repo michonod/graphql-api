@@ -26,7 +26,8 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})],
+  // 👇 this enables the classic GraphQL Playground even in production
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 const startServer = server.start();
