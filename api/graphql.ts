@@ -1,6 +1,7 @@
-import { ApolloServer, gql } from "apollo-server-micro";
+import { ApolloServer } from "apollo-server-micro";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { gql } from "apollo-server-core";
 import { data } from "../data";
 import type { Resolvers } from "../src/generated/graphql";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
@@ -9,7 +10,7 @@ const typeDefs = gql(
   readFileSync(join(process.cwd(), "schema.graphql"), { encoding: "utf-8" })
 );
 
-export const resolvers: Resolvers = {
+const resolvers: Resolvers = {
   Query: {
     findAllBrands: () => data.brands,
     findUniqueBrand: (_: any, args: { id: string }) =>
@@ -21,17 +22,18 @@ export const resolvers: Resolvers = {
   },
 };
 
-const apolloServer = new ApolloServer({
+const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground({})],
 });
-const startServer = apolloServer.start();
+
+const startServer = server.start();
 
 export default async function handler(req: any, res: any) {
   await startServer;
-  return apolloServer.createHandler({ path: "/api/graphql" })(req, res);
+  return server.createHandler({ path: "/api/graphql" })(req, res);
 }
 
 export const config = {
