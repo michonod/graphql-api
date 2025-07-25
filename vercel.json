@@ -5,5 +5,11 @@
       "src": "api/graphql.ts",
       "use": "@vercel/node"
     }
+  ],
+   "routes": [
+    {
+      "src": "/api/graphql",
+      "dest": "api/graphql.ts"
+    }
   ]
 }
