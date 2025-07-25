@@ -3,17 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node index.ts",
+    "dev": "ts-node api/graphql.ts",
+    "start": "ts-node api/graphql.ts",
     "generate": "graphql-codegen --config codegen.yml",
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "apollo-server": "^3.13.0",
+    "apollo-server-micro": "^3.13.0",
+    "graphql": "^16.11.0",
     "dotenv": "^17.2.0"
   },
   "devDependencies": {
@@ -22,8 +19,6 @@
     "@graphql-codegen/typescript-operations": "^4.6.1",
     "@graphql-codegen/typescript-resolvers": "^4.5.1",
     "@types/node": "^24.1.0",
-    "apollo-server-micro": "^3.13.0",
-    "graphql": "^16.11.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
