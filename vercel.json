@@ -1,4 +1,9 @@
 {
-  "builds": [{ "src": "index.ts", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/index.ts" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/graphql.ts",
+      "use": "@vercel/node"
+    }
+  ]
 }

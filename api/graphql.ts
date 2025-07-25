@@ -1,8 +1,8 @@
 import { ApolloServer, gql } from 'apollo-server-micro'
 import { readFileSync } from 'fs'
 import { join } from 'path'
-import { data } from './data'
-import type { Resolvers } from './src/generated/graphql'
+import { data } from '../data'
+import type { Resolvers } from '../src/generated/graphql'
 
 const typeDefs = gql(
   readFileSync(join(process.cwd(), 'schema.graphql'), { encoding: 'utf-8' })
@@ -21,7 +21,6 @@ export const resolvers: Resolvers = {
 const apolloServer = new ApolloServer({ typeDefs, resolvers })
 const startServer = apolloServer.start()
 
-// Use plain types or `any` — do not try to import from @vercel/node
 export default async function handler(req: any, res: any) {
   await startServer
   return apolloServer.createHandler({ path: '/api/graphql' })(req, res)
