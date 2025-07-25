@@ -1,40 +1,59 @@
+enum SortOrder {
+  ASC
+  DESC
+}
+
+enum ModelSortField {
+  name
+  type
+  price
+}
+
+input sortBy {
+  field: ModelSortField!
+  order: SortOrder!
+}
+
 type Query {
   findAllBrands: [Brand!]!
   findUniqueBrand(id: ID!): Brand
+  findBrandModels(id: ID!, sortBy: sortBy!): [Model]
   findUniqueModel(brandId: ID!, modelId: ID!): Model
+  searchModels(brandId: String!, name: String!): [Model!]!
 }
 
 type Brand {
   id: ID!
-  name: String!
-  origin: String!
+  name: String
+  origin: String
   image: String
-  categories: [String!]!
-  models: [Model!]!
+  categories: [String!]
+  models: [Model!]
 }
 
 type Model {
   id: ID!
-  name: String!
-  type: String!
+  name: String
+  type: String
   image: String
   description: String
+  price: Int
   specs: Specs!
-  musicians: [Musician!]!
+  musicians: [Musician!]
 }
 
 type Specs {
-  bodyWood: String!
-  neckWood: String!
-  fingerboardWood: String!
-  pickups: String!
-  tuners: String!
-  scaleLength: String!
-  bridge: String!
+  bodyWood: String
+  neckWood: String
+  fingerboardWood: String
+  pickups: String
+  tuners: String
+  scaleLength: String
+  bridge: String
 }
 
 type Musician {
-  name: String!
+  name: String
   musicianImage: String
-  bands: [String!]!
+  bands: [String!]
 }

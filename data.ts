@@ -12,6 +12,7 @@ export const data = {
           id: "f1",
           name: "Stratocaster",
           type: "ELECTRIC",
+          price: 2000,
           image:
             "https://www.fmicassets.com/Damroot/Zoom/10001/9235000560_gtr_frt_001_rr.png",
           description:
@@ -61,6 +62,7 @@ export const data = {
           id: "f2",
           name: "Telecaster",
           type: "ELECTRIC",
+          price: 5330,
           image:
             "https://www.fmicassets.com/Damroot/xLg/10020/9236091070_fcs_ins_frt_1_rr.png",
           description:
@@ -105,6 +107,7 @@ export const data = {
           id: "f3",
           name: "Jazz Bass",
           type: "BASS",
+          price: 1030,
           image:
             "https://www.eastgatemusic.com.au/wp-content/uploads/2021/12/Fender-American-Professional-II-Jazz-Bass-Black.png",
           description:
@@ -158,6 +161,7 @@ export const data = {
           id: "i1",
           name: "RG550",
           type: "ELECTRIC",
+          price: 1500,
           image:
             "https://www.ibanez.com/common/product_artist_file/file/p_region_RG550_EB_00_04.png",
           description:
@@ -190,6 +194,7 @@ export const data = {
           id: "i2",
           name: "Artcore AS73",
           type: "ELECTRIC",
+          price: 13000,
           image:
             "https://www.ibanez.com/common/product_artist_file/file/p_region_AS73_TBC_5B_06.png",
           description:
@@ -216,6 +221,7 @@ export const data = {
           id: "i3",
           name: "SR500",
           type: "BASS",
+          price: 14000,
           image:
             "https://www.ibanez.com/common/product_artist_file/file/p_region_GSR105EX_BK_1P_02.png",
           description:
@@ -242,6 +248,7 @@ export const data = {
           id: "i4",
           name: "AEWC32FM",
           type: "ACOUSTIC",
+          price: 10500,
           image:
             "https://www.ibanez.com/common/product_artist_file/file/p_region_AEWC32FM_ASF_5B_09.png",
           description:
@@ -271,6 +278,7 @@ export const data = {
           id: "g1",
           name: "Les Paul Standard",
           type: "ELECTRIC",
+          price: 8000,
           image:
             "https://www.stars-music.com/medias/gibson/cropped-custom-shop-les-paul-standard-1959-2h-ht-rw-144189.png",
           description:
@@ -307,6 +315,7 @@ export const data = {
           id: "g2",
           name: "SG Standard",
           type: "ELECTRIC",
+          price: 5000,
           image:
             "https://www.agderlyd.no/image/strengeinstrumenter/elektrisk-gitar/sg-standard-61-stop-bar-vc-1-1-png?v=638354708788630000",
           description:
@@ -333,6 +342,7 @@ export const data = {
           id: "g3",
           name: "ES-335",
           type: "ELECTRIC",
+          price: 1000,
           image:
             "https://www.stars-music.com/medias/gibson/cropped-custom-shop-historic-es335-reissue-1961-2h-ht-rw-169748.png",
           description:
@@ -359,6 +369,7 @@ export const data = {
           id: "g4",
           name: "J-45",
           type: "ACOUSTIC",
+          price: 5000,
           image:
             "https://www.stars-music.com/medias/gibson/cropped-j-45-studio-rosewood-modern-2024-dreadnought-epicea-palissandre-rw-206488.png",
           description:
@@ -385,6 +396,7 @@ export const data = {
           id: "g5",
           name: "Thunderbird Bass",
           type: "BASS",
+          price: 6000,
           image:
             "https://www.stars-music.com/medias/gibson/cropped-custom-shop-gene-simmons-eb-0-bass-ltd-signature-rw-202079.png",
           description:
@@ -423,6 +435,7 @@ export const data = {
           id: "prs1",
           name: "Custom 24",
           type: "ELECTRIC",
+          price: 1070,
           image:
             "https://www.stars-music.com/medias/prs/cropped-custom-24-08-usa-2024-2h-trem-rw-215774.png",
           specs: {
@@ -447,6 +460,7 @@ export const data = {
           id: "prs2",
           name: "McCarty 594",
           type: "ELECTRIC",
+          price: 1700,
           image:
             "https://d159anurvk4929.cloudfront.net/blog/mccarty-model-prs-1920.png",
           description:
@@ -473,6 +487,7 @@ export const data = {
           id: "prs3",
           name: "SE A50E",
           type: "ACOUSTIC",
+          price: 1900,
           image:
             "https://d159anurvk4929.cloudfront.net/blog-legacy/straight1SEAlexLifeson.png",
           description:
@@ -499,6 +514,7 @@ export const data = {
           id: "prs4",
           name: "SE Kingfisher",
           type: "BASS",
+          price: 1700,
           image:
             "https://gi-media.s3.eu-west-2.amazonaws.com/wp-content/uploads/2020/09/14183309/PRS-Kestrel-SE-Bass-1-1.png",
           description:
@@ -535,6 +551,7 @@ export const data = {
           id: "martin1",
           name: "D-28",
           type: "ACOUSTIC",
+          price: 300,
           image:
             "https://www.stars-music.com/medias/martin-guitar/cropped-d-28-standard-dreadnought-epicea-palissandre-eb-58587.png",
           description:
@@ -573,6 +590,7 @@ export const data = {
           id: "martin2",
           name: "000-15M",
           type: "ACOUSTIC",
+          price: 200,
           image:
             "https://www.martinguitar.com/on/demandware.static/-/Library-Sites-MartinSharedLibrary/default/dw7b340644/D-19-190th-Anniversary_frontal.png",
           description:
@@ -605,6 +623,7 @@ export const data = {
           id: "martin3",
           name: "LX1E Little Martin",
           type: "ACOUSTIC",
+          price: 100,
           image:
             "https://onemanz.com/guitar/wp-content/uploads/sites/2/2025/01/Martin_OM-45_2025_s.png",
           description:
@@ -641,6 +660,7 @@ export const data = {
           id: "yamaha1",
           name: "FG800",
           type: "ACOUSTIC",
+          price: 4300,
           image:
             "https://images.squarespace-cdn.com/content/v1/602065399c6bdd6741ed57e1/1706381431399-PVMYJEOOKRM6G59OU5G2/FG800J+Front.png",
           description:
@@ -667,6 +687,7 @@ export const data = {
           id: "yamaha2",
           name: "PAC112V (Pacifica)",
           type: "ELECTRIC",
+          price: 1600,
           image:
             "https://theguitarworld.com/cdn/shop/files/40442_yamaha_pacp12mbbb_Yamaha-PACP12M-BBB-Acclaim-THUMB.png?v=1710796223",
           description:
@@ -693,6 +714,7 @@ export const data = {
           id: "yamaha3",
           name: "TRBX304",
           type: "BASS",
+          price: 1070,
           image:
             "https://theguitarworld.com/cdn/shop/files/35995_yamaha_trb1006jcb_YAMAHA-TRB1006J_CB-ACCLAIM-THUMB.png?v=1710341514",
           description:
@@ -725,6 +747,7 @@ export const data = {
           id: "yamaha4",
           name: "C40",
           type: "CLASSICAL",
+          price: 8000,
           image:
             "https://theguitarworld.com/cdn/shop/files/36082_yamaha_gc12c_YAMAHA-GC12C-ACCLAIM-THUMB.png?v=1710770207",
           description:
@@ -761,6 +784,7 @@ export const data = {
           id: "gretsch1",
           name: "G6120T-59 Vintage Select",
           type: "ELECTRIC",
+          price: 1300,
           image:
             "https://www.premierguitar.com/media-library/gretsch-electromatic-5420t-review.png?id=30036905&width=1200&height=600&coordinates=0%2C100%2C0%2C100",
           description:
@@ -793,6 +817,7 @@ export const data = {
           id: "gretsch2",
           name: "G5420T Electromatic",
           type: "ELECTRIC",
+          price: 13000,
           image:
             "https://stevesmusic.com/cdn/shop/files/2816939560_gre_ins_frt_1_rr.png?v=1720365654",
           description:
@@ -819,6 +844,7 @@ export const data = {
           id: "gretsch3",
           name: "Rancher G5034TFT",
           type: "ACOUSTIC",
+          price: 643,
           image:
             "https://foundsound.com.au/cdn/shop/products/2714014556_gre_ins_frt_01_rr_2048x.png?v=1646781354",
           description:
@@ -855,6 +881,7 @@ export const data = {
           id: "epiphone1",
           name: "Les Paul Standard",
           type: "ELECTRIC",
+          price: 10400,
           image:
             "https://guitarsforidiots.com/wp-content/uploads/2021/01/lp.png",
           description:
@@ -890,6 +917,7 @@ export const data = {
           id: "epiphone2",
           name: "Casino",
           type: "ELECTRIC",
+          price: 10500,
           image:
             "https://cdn.long-mcquade.com/files/373308/lg_3676a958cbc6334889f32950d6a3461b.png",
           description:
@@ -916,6 +944,7 @@ export const data = {
           id: "epiphone3",
           name: "DR-100",
           type: "ACOUSTIC",
+          price: 1030,
           image:
             "https://www.stars-music.com/medias/epiphone/cropped-pro-1-acoustic-dreadnought-epicea-acajou-108628.png",
           description:
@@ -942,6 +971,7 @@ export const data = {
           id: "epiphone4",
           name: "Toby Standard IV",
           type: "BASS",
+          price: 1300,
           image:
             "https://www.stars-music.com/medias/epiphone/cropped-eb-0-sg-bass-rw-57847.png",
           description:
@@ -977,6 +1007,7 @@ export const data = {
           id: "jackson1",
           name: "Soloist SLX",
           type: "ELECTRIC",
+          price: 1200,
           image: "https://media.rainpos.com/9589/2910135539_gtr_frt_001_rr.png",
           description:
             "The Jackson X Series Soloist SLX DX is a high-performance electric guitar designed for modern rock and metal players seeking speed, comfort, and aggressive tone at an accessible price point. Part of Jackson’s X Series, it combines classic design elements with contemporary features to deliver a versatile instrument suitable for both rhythm and lead playing.",
@@ -1002,6 +1033,7 @@ export const data = {
           id: "jackson2",
           name: "Rhoads RRX24",
           type: "ELECTRIC",
+          price: 1400,
           image:
             "https://uk.jacksonguitars.com/cdn/shop/files/2913636552_jac_ins_frt_1_rr.png?v=1740193438",
           description:
@@ -1028,6 +1060,7 @@ export const data = {
           id: "jackson3",
           name: "JS Series Concert Bass JS3",
           type: "BASS",
+          price: 1500,
           image:
             "https://www.jacksonguitars.com/cdn/shop/files/2919011568_gtr_frt_001_rr.png?v=1740194050",
           description:
@@ -1056,14 +1089,14 @@ export const data = {
       id: "10",
       name: "Music Man",
       origin: "USA",
-      image:
-        "https://poldermeester.nl/images/gitaar/2015-05/musicman_logo.png",
+      image: "https://poldermeester.nl/images/gitaar/2015-05/musicman_logo.png",
       categories: ["ELECTRIC", "BASS"],
       models: [
         {
           id: "mm1",
           name: "StingRay Special",
           type: "BASS",
+          price: 1500,
           image:
             "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-82.png?1729089330",
           description:
@@ -1096,6 +1129,7 @@ export const data = {
           id: "mm2",
           name: "Axis Super Sport",
           type: "ELECTRIC",
+          price: 1600,
           image:
             "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-105.png?1727235595",
           description:
@@ -1122,6 +1156,7 @@ export const data = {
           id: "mm3",
           name: "Cutlass RS",
           type: "ELECTRIC",
+          price: 1300,
           image:
             "https://s3-us-west-2.amazonaws.com/static.music-man.com/website/images/instruments/instrument-3.png?1716360607",
           description:

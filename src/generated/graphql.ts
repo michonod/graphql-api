@@ -18,12 +18,12 @@ export type Scalars = {
 
 export type Brand = {
   __typename?: 'Brand';
-  categories: Array<Scalars['String']['output']>;
+  categories?: Maybe<Array<Scalars['String']['output']>>;
   id: Scalars['ID']['output'];
   image?: Maybe<Scalars['String']['output']>;
-  models: Array<Model>;
-  name: Scalars['String']['output'];
-  origin: Scalars['String']['output'];
+  models?: Maybe<Array<Model>>;
+  name?: Maybe<Scalars['String']['output']>;
+  origin?: Maybe<Scalars['String']['output']>;
 };
 
 export type Model = {
@@ -31,24 +31,39 @@ export type Model = {
   description?: Maybe<Scalars['String']['output']>;
   id: Scalars['ID']['output'];
   image?: Maybe<Scalars['String']['output']>;
-  musicians: Array<Musician>;
-  name: Scalars['String']['output'];
+  musicians?: Maybe<Array<Musician>>;
+  name?: Maybe<Scalars['String']['output']>;
+  price?: Maybe<Scalars['Int']['output']>;
   specs: Specs;
-  type: Scalars['String']['output'];
+  type?: Maybe<Scalars['String']['output']>;
 };
+
+export enum ModelSortField {
+  Name = 'name',
+  Price = 'price',
+  Type = 'type'
+}
 
 export type Musician = {
   __typename?: 'Musician';
-  bands: Array<Scalars['String']['output']>;
+  bands?: Maybe<Array<Scalars['String']['output']>>;
   musicianImage?: Maybe<Scalars['String']['output']>;
-  name: Scalars['String']['output'];
+  name?: Maybe<Scalars['String']['output']>;
 };
 
 export type Query = {
   __typename?: 'Query';
   findAllBrands: Array<Brand>;
+  findBrandModels?: Maybe<Array<Maybe<Model>>>;
   findUniqueBrand?: Maybe<Brand>;
   findUniqueModel?: Maybe<Model>;
+  searchModels: Array<Model>;
+};
+
+
+export type QueryFindBrandModelsArgs = {
+  id: Scalars['ID']['input'];
+  sortBy: SortBy;
 };
 
 
@@ -62,15 +77,31 @@ export type QueryFindUniqueModelArgs = {
   modelId: Scalars['ID']['input'];
 };
 
+
+export type QuerySearchModelsArgs = {
+  brandId: Scalars['String']['input'];
+  name: Scalars['String']['input'];
+};
+
+export enum SortOrder {
+  Asc = 'ASC',
+  Desc = 'DESC'
+}
+
 export type Specs = {
   __typename?: 'Specs';
-  bodyWood: Scalars['String']['output'];
-  bridge: Scalars['String']['output'];
-  fingerboardWood: Scalars['String']['output'];
-  neckWood: Scalars['String']['output'];
-  pickups: Scalars['String']['output'];
-  scaleLength: Scalars['String']['output'];
-  tuners: Scalars['String']['output'];
+  bodyWood?: Maybe<Scalars['String']['output']>;
+  bridge?: Maybe<Scalars['String']['output']>;
+  fingerboardWood?: Maybe<Scalars['String']['output']>;
+  neckWood?: Maybe<Scalars['String']['output']>;
+  pickups?: Maybe<Scalars['String']['output']>;
+  scaleLength?: Maybe<Scalars['String']['output']>;
+  tuners?: Maybe<Scalars['String']['output']>;
+};
+
+export type SortBy = {
+  field: ModelSortField;
+  order: SortOrder;
 };
 
 
@@ -147,11 +178,15 @@ export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   Brand: ResolverTypeWrapper<Brand>;
   ID: ResolverTypeWrapper<Scalars['ID']['output']>;
+  Int: ResolverTypeWrapper<Scalars['Int']['output']>;
   Model: ResolverTypeWrapper<Model>;
+  ModelSortField: ModelSortField;
   Musician: ResolverTypeWrapper<Musician>;
   Query: ResolverTypeWrapper<{}>;
+  SortOrder: SortOrder;
   Specs: ResolverTypeWrapper<Specs>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
+  sortBy: SortBy;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -159,20 +194,22 @@ export type ResolversParentTypes = {
   Boolean: Scalars['Boolean']['output'];
   Brand: Brand;
   ID: Scalars['ID']['output'];
+  Int: Scalars['Int']['output'];
   Model: Model;
   Musician: Musician;
   Query: {};
   Specs: Specs;
   String: Scalars['String']['output'];
+  sortBy: SortBy;
 };
 
 export type BrandResolvers<ContextType = any, ParentType extends ResolversParentTypes['Brand'] = ResolversParentTypes['Brand']> = {
-  categories?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
+  categories?: Resolver<Maybe<Array<ResolversTypes['String']>>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  models?: Resolver<Array<ResolversTypes['Model']>, ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  origin?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  models?: Resolver<Maybe<Array<ResolversTypes['Model']>>, ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  origin?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -180,34 +217,37 @@ export type ModelResolvers<ContextType = any, ParentType extends ResolversParent
   description?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   image?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  musicians?: Resolver<Array<ResolversTypes['Musician']>, ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  musicians?: Resolver<Maybe<Array<ResolversTypes['Musician']>>, ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  price?: Resolver<Maybe<ResolversTypes['Int']>, ParentType, ContextType>;
   specs?: Resolver<ResolversTypes['Specs'], ParentType, ContextType>;
-  type?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  type?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type MusicianResolvers<ContextType = any, ParentType extends ResolversParentTypes['Musician'] = ResolversParentTypes['Musician']> = {
-  bands?: Resolver<Array<ResolversTypes['String']>, ParentType, ContextType>;
+  bands?: Resolver<Maybe<Array<ResolversTypes['String']>>, ParentType, ContextType>;
   musicianImage?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   findAllBrands?: Resolver<Array<ResolversTypes['Brand']>, ParentType, ContextType>;
+  findBrandModels?: Resolver<Maybe<Array<Maybe<ResolversTypes['Model']>>>, ParentType, ContextType, RequireFields<QueryFindBrandModelsArgs, 'id' | 'sortBy'>>;
   findUniqueBrand?: Resolver<Maybe<ResolversTypes['Brand']>, ParentType, ContextType, RequireFields<QueryFindUniqueBrandArgs, 'id'>>;
   findUniqueModel?: Resolver<Maybe<ResolversTypes['Model']>, ParentType, ContextType, RequireFields<QueryFindUniqueModelArgs, 'brandId' | 'modelId'>>;
+  searchModels?: Resolver<Array<ResolversTypes['Model']>, ParentType, ContextType, RequireFields<QuerySearchModelsArgs, 'brandId' | 'name'>>;
 };
 
 export type SpecsResolvers<ContextType = any, ParentType extends ResolversParentTypes['Specs'] = ResolversParentTypes['Specs']> = {
-  bodyWood?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  bridge?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  fingerboardWood?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  neckWood?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  pickups?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  scaleLength?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  tuners?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  bodyWood?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  bridge?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  fingerboardWood?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  neckWood?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  pickups?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  scaleLength?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  tuners?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
