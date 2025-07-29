@@ -14,7 +14,7 @@ import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-co
 import Cors from "micro-cors";
 
 const cors = Cors({
-  origin: "*",
+  origin: "*", // allow all origins for dev; change in prod
   allowMethods: ["GET", "POST", "OPTIONS"],
   allowHeaders: ["Content-Type", "Authorization"],
 });
@@ -82,7 +82,21 @@ const server = new ApolloServer({
 const startServer = server.start();
 
 async function handler(req: any, res: any) {
+  // Handle preflight OPTIONS request
+  if (req.method === "OPTIONS") {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.statusCode = 200;
+    res.end();
+    return;
+  }
+
+  // For all other requests, set CORS headers and run Apollo server
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
+
   await startServer;
   return server.createHandler({ path: "/api/graphql" })(req, res);
 }
