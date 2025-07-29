@@ -11,6 +11,13 @@ import {
   Maybe,
 } from "../src/generated/graphql";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
+import Cors from "micro-cors";
+
+const cors = Cors({
+  origin: "*",
+  allowMethods: ["GET", "POST", "OPTIONS"],
+  allowHeaders: ["Content-Type", "Authorization"],
+});
 
 const typeDefs = gql(
   readFileSync(join(process.cwd(), "schema.graphql"), { encoding: "utf-8" })
@@ -45,14 +52,20 @@ const resolvers: Resolvers = {
           ?.models.find((model) => model.id === args.modelId) ?? null
       );
     },
-    searchModels: (_: unknown, args: {brandId: string, name: string }): Model[] => {
+    searchModels: (
+      _: unknown,
+      args: { brandId: string; name: string }
+    ): Model[] => {
       const searchTerm = args.name.toLowerCase();
 
-      const allModels = data.brands.find((brand) => brand.id === args.brandId)?.models
+      const allModels = data.brands.find(
+        (brand) => brand.id === args.brandId
+      )?.models;
 
-      const filteredModels = allModels?.filter((model) =>
-        model.name.toLowerCase().startsWith(searchTerm)
-      ) ?? [];
+      const filteredModels =
+        allModels?.filter((model) =>
+          model.name.toLowerCase().startsWith(searchTerm)
+        ) ?? [];
 
       return filteredModels;
     },
@@ -63,16 +76,18 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   introspection: true,
-  // 👇 this enables the classic GraphQL Playground even in production
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 const startServer = server.start();
 
-export default async function handler(req: any, res: any) {
+async function handler(req: any, res: any) {
+  res.setHeader("Access-Control-Allow-Credentials", "true");
   await startServer;
   return server.createHandler({ path: "/api/graphql" })(req, res);
 }
+
+export default cors(handler);
 
 export const config = {
   api: {
