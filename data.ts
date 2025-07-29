@@ -148,6 +148,198 @@ export const data = {
             },
           ],
         },
+        {
+          id: "f4",
+          name: "Mustang",
+          type: "ELECTRIC",
+          price: 1200,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0144040502_fen_ins_frt_1_rr.jpg",
+          description:
+            "The Fender Mustang is a short-scale electric guitar originally introduced in the 1960s for student players. Its punchy tone, quirky offset body, and unique switching system have made it a favorite in alternative and indie rock circles.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Rosewood",
+            pickups: "2x Single-Coil Mustang",
+            tuners: "Vintage-Style",
+            scaleLength: "24 inches",
+            bridge: "Dynamic Vibrato Tailpiece",
+          },
+          musicians: [
+            {
+              name: "Kurt Cobain",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/6/6f/Kurt_Cobain_1992.jpg",
+              bands: ["Nirvana"],
+            },
+            {
+              name: "Adrian Belew",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/f/f5/Adrian_Belew.jpg",
+              bands: ["King Crimson"],
+            },
+          ],
+        },
+        {
+          id: "f5",
+          name: "Jaguar",
+          type: "ELECTRIC",
+          price: 1400,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0140903506_fen_ins_frt_1_rr.jpg",
+          description:
+            "The Fender Jaguar is an offset electric guitar known for its short scale, bright tone, and complex switching system. Introduced in the 1960s and later adopted by punk and indie musicians for its raw sound and unique feel.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Rosewood",
+            pickups: "2x Single-Coil Jaguar",
+            tuners: "Vintage-Style",
+            scaleLength: "24 inches",
+            bridge: "Floating Tremolo",
+          },
+          musicians: [
+            {
+              name: "Johnny Marr",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/e/e4/Johnny_Marr_in_Hamburg_2018.jpg",
+              bands: ["The Smiths"],
+            },
+            {
+              name: "John Frusciante",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/3/3f/John_Frusciante_2006.jpg",
+              bands: ["Red Hot Chili Peppers"],
+            },
+          ],
+        },
+        {
+          id: "f6",
+          name: "Precision Bass",
+          type: "BASS",
+          price: 1150,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0190100806_gtr_frt_001_rr.jpg",
+          description:
+            "The Fender Precision Bass, or P-Bass, was the first mass-produced electric bass guitar. Known for its punchy tone and simplicity, it's a cornerstone of rock, funk, and soul music, favored for its reliability and straightforward playability.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Maple",
+            pickups: "Split Single-Coil Precision Bass",
+            tuners: "Standard Open-Gear",
+            scaleLength: "34 inches",
+            bridge: "4-Saddle Vintage-Style",
+          },
+          musicians: [
+            {
+              name: "James Jamerson",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/en/7/77/James_Jamerson.jpg",
+              bands: ["The Funk Brothers", "Motown"],
+            },
+            {
+              name: "Steve Harris",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/6/68/Steve_Harris_2010.jpg",
+              bands: ["Iron Maiden"],
+            },
+          ],
+        },
+        {
+          id: "f7",
+          name: "Duo-Sonic",
+          type: "ELECTRIC",
+          price: 999,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0144012581_fen_ins_frt_1_rr.jpg",
+          description:
+            "Originally launched as a student model in the 1950s, the Duo-Sonic has grown into a cult classic. With its compact size, short scale, and crisp tone, it’s a favorite among indie and garage rock players for its simplicity and charm.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Pau Ferro",
+            pickups: "2x Single-Coil Duo-Sonic",
+            tuners: "Standard Cast/Sealed",
+            scaleLength: "24 inches",
+            bridge: "6-Saddle Hardtail",
+          },
+          musicians: [
+            {
+              name: "Liz Phair",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/f/f6/Liz_Phair_2018.jpg",
+              bands: ["Solo"],
+            },
+            {
+              name: "Annie Clark (St. Vincent)",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/f/f4/StVincent_Jan2015.jpg",
+              bands: ["St. Vincent"],
+            },
+          ],
+        },
+        {
+          id: "f8",
+          name: "Jazzmaster",
+          type: "ELECTRIC",
+          price: 1600,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0114000700_fen_ins_frt_1_rr.jpg",
+          description:
+            "The Fender Jazzmaster was originally designed for jazz musicians, but quickly found popularity among surf rockers and alt/indie bands for its mellow tone, offset body, and floating tremolo system.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Rosewood",
+            pickups: "2x Single-Coil Jazzmaster",
+            tuners: "Vintage-Style",
+            scaleLength: "25.5 inches",
+            bridge: "Floating Tremolo with Lock Button",
+          },
+          musicians: [
+            {
+              name: "Elvis Costello",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/e/e5/Elvis_Costello_2012.jpg",
+              bands: ["The Attractions", "Solo"],
+            },
+            {
+              name: "Thurston Moore",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/6/6c/Thurston_Moore_2007.04.28.jpg",
+              bands: ["Sonic Youth"],
+            },
+          ],
+        },
+        {
+          id: "f9",
+          name: "Meteora",
+          type: "ELECTRIC",
+          price: 1499,
+          image:
+            "https://www.fmicassets.com/Damroot/ZoomJpg/10001/0147322370_fen_ins_frt_1_rr.jpg",
+          description:
+            "The Fender Meteora is a bold, modern offset guitar introduced as part of Fender’s Parallel Universe series. It combines vintage vibes with contemporary specs, offering a unique shape and dynamic sound perfect for experimental and indie players.",
+          specs: {
+            bodyWood: "Alder",
+            neckWood: "Maple",
+            fingerboardWood: "Pau Ferro",
+            pickups: "2x Player Series Humbuckers",
+            tuners: "Deluxe Cast/Sealed",
+            scaleLength: "25.5 inches",
+            bridge: "6-Saddle Hardtail with Bent Steel Saddles",
+          },
+          musicians: [
+            {
+              name: "Jim Root",
+              musicianImage:
+                "https://upload.wikimedia.org/wikipedia/commons/1/1c/Jim_Root_2009.jpg",
+              bands: ["Slipknot", "Stone Sour"],
+            },
+          ],
+        },
       ],
     },
     {
